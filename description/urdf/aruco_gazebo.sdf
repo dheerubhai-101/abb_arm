@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="aruco_marker">
+    <pose>0.5 0 0.01 0 0 0</pose> <!-- Position the marker slightly above the ground -->
+    <link name="aruco_link">
+      <!-- Collision element -->
+      <collision name="aruco_collision">
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.01</size> <!-- Size of the ArUco marker -->
+          </box>
+        </geometry>
+      </collision>
+      <!-- Visual element -->
+      <visual name="aruco_visual">
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.01</size> <!-- Visual matches collision size -->
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <!-- Correct the URI to point to a valid texture path -->
+            <uri>model:///home/bravelord/abb_arm_ws/marker_0001.png</uri> 
+          </script>
+        </material>
+      </visual>
+    </link>
+    <static>true</static> <!-- Make the marker static to avoid physics issues -->
+  </model>
+</sdf>
